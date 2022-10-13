@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List</title>
+  </head>
+  <body>
+    <input type="text" id="val" onfocus="this.value=''" />
+    <button id="btn">Listeye Ekle</button>
+    <div><ul id="result"></ul></div>
+
+    <script>
+      var val, btn, result;
+      val = document.getElementById("val");
+      btn = document.getElementById("btn");
+      result = document.getElementById("result");
+
+      btn.onclick = function addList() {
+        if (val.value == null || val.value == "" || val.value == " ") {
+          console.log("boş değer");
+        } else {
+          result.innerHTML += "<li>" + val.value + "</li>";
+        }
+      };
+    </script>
+  </body>
+</html>
