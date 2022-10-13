@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sınav Ortalamasını Hesapla</title>
+  </head>
+  <body>
+    <h1>Sınav Ortalamasını Hesapla</h1>
+    <p>1.Vize Notunu Gir</p>
+    <input type="text" id="vize1" />
+    <p>2.Vize Notunu Gir</p>
+    <input type="text" id="vize2" />
+    <p>Final Notunu Gir</p>
+    <input type="text" id="final" />
+    <button id="btn">Hesapla</button>
+    <p id="result"></p>
+
+    <script>
+      var vize1, vize2, final, btn, result;
+      vize1 = document.getElementById("vize1");
+      vize2 = document.getElementById("vize2");
+      final = document.getElementById("final");
+      btn = document.getElementById("btn");
+      result = document.getElementById("result");
+      var sonuc;
+      btn.onclick = function Calculate() {
+        sonuc = vize1.value * 0.35 + vize2.value * 0.35 + final.value * 0.4;
+
+        if (sonuc < 50 && sonuc >= 0) {
+          result.innerHTML = "Sınav notunuz : " + sonuc + " Kaldınız.";
+        }
+        if (sonuc > 50 && sonuc <= 100) {
+          result.innerHTML = "Sınav notunuz : " + sonuc + " Geçtiniz.";
+        }
+        if (sonuc > 100 || sonuc < 0) {
+          result.innerHTML = "Lütfen doğru sonuçlar girin.";
+        }
+        if (isNaN(sonuc)) {
+          result.innerHTML = "Lütfen doğru sonuçlar girin.";
+        }
+      };
+    </script>
+  </body>
+</html>
