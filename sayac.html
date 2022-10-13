@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sayac</title>
+  </head>
+  <body>
+    <input type="button" value="0" id="result" />
+    <button id="down">Azalt</button>
+    <button id="up">Arttır</button>
+
+    <script>
+      var result, up, down;
+      result = document.getElementById("result");
+      up = document.getElementById("up");
+      down = document.getElementById("down");
+      up.onclick = function upper() {
+        result.value++;
+      };
+      down.onclick = function down() {
+        result.value--;
+      };
+    </script>
+  </body>
+</html>
