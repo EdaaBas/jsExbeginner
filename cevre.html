@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alan|Çevre Hesaplaması</title>
+  </head>
+  <body>
+    <h1>Alan/Çevre Hesaplaması</h1>
+    <p>Uzun kenarı giriniz</p>
+    <input type="text" id="value1" />
+    <p>Kısa kenarı giriniz</p>
+    <input type="text" id="value2" />
+    <br /><br />
+    <button id="alan">Alan Hesapla</button>
+    <button id="cevre">Çevre Hesapla</button>
+    <p id="result"></p>
+
+    <script>
+      //tanımlamalar
+      var value1, value2, alan, cevre, result;
+      value1 = document.getElementById("value1");
+      value2 = document.getElementById("value2");
+      alan = document.getElementById("alan");
+      cevre = document.getElementById("cevre");
+      result = document.getElementById("result");
+      var result2;
+
+      alan.onclick = function alanHesapla() {
+        if (isNaN(value1.value) || isNaN(value2.value)) {
+          result.innerText = "Lütfen Sayı Girin";
+        } else {
+          result.innerText = value1.value * value2.value;
+        }
+      };
+      cevre.onclick = function cevreHesapla() {
+        if (isNaN(value1.value) || isNaN(value2.value)) {
+          result.innerText = "Lütfen Sayı Girin";
+        } else {
+          result.innerText = 2 * (Number(value1.value) + Number(value2.value));
+        }
+      };
+    </script>
+  </body>
+</html>

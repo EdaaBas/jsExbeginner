@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faktoriyel Hesapla</title>
+  </head>
+  <body>
+    <p>Faktoriyelini almak istediğin sayıyı gir.</p>
+    <input type="text" id="val" />
+    <button id="btn">Hesapla!</button>
+    <p id="result"></p>
+
+    <script>
+      var val, btn, result;
+      val = document.getElementById("val");
+      btn = document.getElementById("btn");
+      result = document.getElementById("result");
+
+      btn.onclick = function calculate() {
+        var fkt = 1;
+        if (isNaN(val.value)) {
+          result.innerHTML = "Lütfen Sayı gir!";
+        } else {
+          for (i = 1; i <= Number(val.value); i++) {
+            fkt *= i;
+          }
+          result.innerHTML = fkt;
+        }
+      };
+    </script>
+  </body>
+</html>
