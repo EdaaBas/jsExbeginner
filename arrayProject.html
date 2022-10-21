@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArrayGame</title>
+  </head>
+  <body>
+    <div id="addItem">
+      <h1>Add Methods</h1>
+      <button id="push">push</button>
+      <button id="unshift">unshift</button>
+      <button id="insertat">insert at</button>
+      <input input type="number" id="addNumber" />
+    </div>
+    <div id="removeItem">
+      <h1>Remove Methods</h1>
+      <button id="pop">pop</button>
+      <button id="shift">shift</button>
+      <button id="removeat">remove at</button>
+      <input type="number" id="removeNumber" />
+    </div>
+    <p>[<span id="result"></span>]</p>
+
+    <script>
+      //Array Tanımlaması
+      var myArr = ["1", "2", "3", "4"];
+      // Değişken tanımlamaları
+      var push,
+        unshift,
+        insertat,
+        addNumber,
+        pop,
+        shift,
+        removeat,
+        removeNumber,
+        result;
+      //Değişkenlerle Html elemanlarının eşlenmesi
+      push = document.getElementById("push");
+      unshift = document.getElementById("unshift");
+      insertat = document.getElementById("insertat");
+      addNumber = document.getElementById("addNumber");
+      pop = document.getElementById("pop");
+      shift = document.getElementById("shift");
+      removeat = document.getElementById("removeat");
+      removeNumber = document.getElementById("removeNumber");
+      result = document.getElementById("result");
+      //Tıklama fonksiyonları
+      push.onclick = function Push() {
+        myArr.push("5");
+        result.innerHTML = myArr;
+      };
+      unshift.onclick = function Unshift() {
+        myArr.unshift("6");
+        result.innerHTML = myArr;
+      };
+      insertat.onclick = function Insertat() {
+        myArr.splice(addNumber.value, 0, "7");
+        result.innerHTML = myArr;
+      };
+      pop.onclick = function Pop() {
+        myArr.pop();
+        result.innerHTML = myArr;
+      };
+      shift.onclick = function Shift() {
+        myArr.shift();
+        result.innerHTML = myArr;
+      };
+      removeat.onclick = function Removeat() {
+        myArr.splice(removeNumber.value, removeNumber.value);
+        result.innerHTML = myArr;
+      };
+    </script>
+  </body>
+</html>
